@@ -1,0 +1,116 @@
+.footer {
+  background: #3B3B3B;
+  padding-top: 63px;
+  padding-bottom: 72px;
+
+  &__wrap {
+    display: flex;
+    max-width: 1140px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+  }
+
+  &__col {
+
+    &_caption {
+      font-size: 24px;
+      line-height: 24px;
+      position: relative;
+      margin-bottom: 17px;
+
+      &.hide {
+        opacity: 0;
+      }
+
+      &:before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 60px;
+        height: 5px;
+        background-color: #265D93;
+      }
+    }
+
+    &:not(:first-of-type) {
+
+      .footer__col_caption {
+        margin-bottom: 28px;
+        padding-bottom: 25px;
+
+        &:before {
+          content: '';
+        }
+      }
+    }
+
+    &_logo {
+      display: block;
+      margin: 0 auto 70px;
+    }
+
+    &_text {
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-size: initial;
+      width: fit-content;
+      font-size: 18px;
+      line-height: 140%;
+      padding: 3px 0 3px 30px;
+      
+      &.tel {
+        background-image: url('../../img/phone-icon.svg');
+        margin-bottom: 30px;
+      }
+
+      &.location {
+        background-image: url('../../img/location-icon.svg');
+        margin-bottom: 30px;
+      }
+
+      &.fb {
+        background-image: url('../../img/fb-icon.svg');
+      }
+    }
+
+    &_min-text {
+      font-size: 16px;
+      line-height: 140%;
+      display: block;
+
+      @include on-event {
+        text-decoration: underline;
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 19px;
+      }
+    }
+
+    &.first {
+      text-align: center;
+      min-width: 165px;
+      margin-right: 118px;
+
+      .footer__col_text {
+        background-image: url('../../img/clock-icon.svg');
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    &.second {
+      min-width: 335px;
+      max-width: 335px;
+      margin-right: 80px;
+    }
+
+    &.third {
+      min-width: 190px;
+      max-width: 190px;
+      margin-right: 65px;
+    }
+  }
+}

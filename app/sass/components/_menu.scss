@@ -1,0 +1,53 @@
+.menu {
+  margin: 0 auto;
+  max-width: 1320px;
+  width: 100%;
+
+  &__wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:last-of-type) {
+
+      &:before {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 1px;
+        background-color: #fff;
+        left: 0;
+        bottom: 4px;
+        @include transition-ease;
+      }
+
+      @include on-event {
+
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+
+    &:last-of-type {
+
+      .menu__item_link {
+        padding: 0;
+      }
+    }
+
+    &_link {
+      color: #fff;
+      font-size: 18px;
+      line-height: 18px;
+      display: block;
+      padding-top: 4px;
+      padding-bottom: 8px;
+    }
+  }
+}
